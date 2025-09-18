@@ -3,8 +3,8 @@
  /// # ContentView.swift
  /// # Lab1
  /// # Partner Lab 1
- /// ##**Group #**: [Group #1]
- /// ##**Partners**: Mohammad Reza Zarei, [Edgar Rosales]
+ /// ##**Group #1**
+ /// ##**Partners**: Mohammad Reza Zarei, Edgar Rosales
  /// # **Date**: [09/17/2025]
 
 
@@ -40,13 +40,14 @@ struct ContentView: View {
             Text("Tap a dog to see its description")
                 .font(.headline)
                 .padding(.top)
+                .frame(minHeight: 30)
 
             LazyVGrid(columns: columns, spacing: 12) {
                 ForEach(dogNames, id: \.self) { name in
                     Image(name)
                         .resizable()
                         .scaledToFit()
-                        .frame(minHeight: 120)
+                        .frame(minHeight: 100, maxHeight: 200)
                         .cornerRadius(12)
                         .shadow(radius: 2)
                         .onTapGesture {
@@ -63,6 +64,7 @@ struct ContentView: View {
                         .font(.body)
                         .multilineTextAlignment(.center)
                         .padding()
+                        .frame(minHeight: 180, maxHeight: 200)
                         .transition(.opacity.combined(with: .scale))
                 } else {
                     Text("No dog selected yet.")
